@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Questoes(2)</title>
+</head>
+<body>
+    <form id="id-form-user2" method="POST" action="/cgi-bin/P15SISC20.exe">
+        <fieldset>
+            <legend>Cadastro De Questões</legend>
+            <!-- Entrada ID disciplina-->
+            <label for="id-disciplina-id">Disciplina:</label><br>
+            <input type="number" id="id-disciplina-id" name="f-disciplina-id" min="1" maxlength="03" value="%%f-disciplina-id%%">
+            <br> <br>
+            <!-- Entrada ID Questao-->
+            <label for="id-questao-id">Questão:</label> <br>
+            <input type="number" id="id-questao-id" name="f-questao-id" min="1" maxlength="05" value="%%f-questao-id%%">
+            <br><br>
+            <!-- Entrada Pergunta -->
+            <label for="id-pergunta">Pergunta:</label> <br>
+            <textarea name="f-pergunta"    id="id-pergunta"   cols="40" rows="03" maxlength="360">%%f-pergunta%%</textarea> 
+            <br><br>
+            <!-- Entrada Resposta "A" -->
+            <label for="id-resposta-a-">Resposta A:</label> <br>
+            <textarea name="f-resposta-a" id="id-resposta-a" cols="40" rows="03" maxlength="360">%%f-resposta-a%%</textarea>
+            <br><br>
+            <!-- Entrada Resposta "B" -->
+            <label for="id-resposta-b">Resposta B:</label> <br>
+            <textarea name="f-resposta-b"  id="id-resposta-b" cols="40" rows="03" maxlength="360">%%f-resposta-b%%</textarea>
+            <br><br>
+            <!-- Entrada Resposta "C"-->
+            <label for="id-resposta-c">Resposta C:</label> <br>
+            <textarea name="f-resposta-c"  id="id-resposta-c" cols="40" rows="03" maxlength="360">%%f-resposta-c%%</textarea>
+            <br><br>
+            <!-- Entrada Resposta "D"-->
+            <label for="id-resposta-d">Resposta D:</label> <br>
+            <textarea name="f-resposta-d"  id="id-resposta-d" cols="40" rows="03" maxlength="360">%%f-resposta-d%%</textarea>
+            <br><br>
+            <!-- Entrada Resposta "E"-->
+            <label for="id-resposta-e">Resposta E:</label> <br>
+            <textarea name="f-resposta-e"  id="id-resposta-e" cols="40" rows="03" maxlength="360">%%f-resposta-e%%</textarea>
+            <br><br>
+            <!-- Entrada do Gabarito-->
+            <label for="id-gabarito">Gabarito:</label>
+            <input type="text" id="id-gabarito" name="f-gabarito" maxlength="01" value="%%f-gabarito%%">
+            <br> <br>
+        </fieldset>
+        <br>
+        
+        <!-- Botoes -->
+        <button type="submit" id="id-botao-salvar"    name="f-opcao-salvar"    value="SA" >Salvar   </button>
+        <button type="submit" id="id-botao-consultar" name="f-opcao-consultar" value="CO" >Consultar</button>
+        <button type="submit" id="id-botao-deletar"   name="f-opcao-deletar"   value="DE" >Deletar  </button>
+        <input type="reset"   id="id-botao-reset"     value="Cancelar">
+        
+        
+        <input type="hidden" id="id-hd-msn1"      name="f-hd-msn1"      value="%%f-hd-msn1%%">
+        <input type="hidden" id="id-hd-confirma"  name="f-hd-confirma"  value="%%f-hd-confirma%%">
+        <input type="hidden" id="id-hd-operacao"  name="f-hd-operacao"  value="%%f-hd-operacao%%">
+        <input type="hidden" id="id-hd-mens2"     name="f-hd-mens2"     value="%%f-hd-mens2%%">
+        
+    </form>
+
+    <script>
+        var msn1     = document.querySelector("#id-hd-msn1");
+        var confirma = document.querySelector("#id-hd-confirma");
+        var msn2     = document.querySelector("#id-hd-mens2");
+        console.log(msn1);
+        console.log(confirma);
+        
+        if (confirma.value == "?     "){
+            confirma.value = window.confirm(msn1.value);
+
+            document.getElementById("id-form-user2").submit();
+        }
+        console.log(msn2);
+        if (msn2.value != "                                                  " ){
+                alert(msn2.value);
+
+        }
+    </script>
+
+
+    
+</body>
+</html>
